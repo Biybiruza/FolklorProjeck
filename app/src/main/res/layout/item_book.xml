@@ -22,7 +22,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:src="@drawable/folklor1"/>
+            android:src="@drawable/folklor0"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

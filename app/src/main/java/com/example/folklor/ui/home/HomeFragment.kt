@@ -24,7 +24,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         recyclerView.addItemDecoration(MarginItemDecoration(16,128))
         recyclerView.adapter = adapter
         adapter.setOnClickItemListener {
-            val intent = Intent(requireContext(),PDFView::class.java)
+            val intent = Intent(requireContext(),PDFReaderView::class.java)
             intent.putExtra(PDFReaderView.ID,it)
             startActivity(intent)
             Toast.makeText(requireContext(),"item clicked",Toast.LENGTH_LONG).show()

@@ -10,7 +10,7 @@ import com.example.folklor.R
 class PDFListAdapter : RecyclerView.Adapter<PDFListAdapter.PDFViewHolder>() {
 
     inner class PDFViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
-        fun populateModel(n: Int,onClick:(it:Int)->Unit){
+        fun populateModel(n: Int){
             val imageResName = "folklor${n}"
             Glide
                     .with(itemView)
@@ -29,7 +29,7 @@ class PDFListAdapter : RecyclerView.Adapter<PDFListAdapter.PDFViewHolder>() {
         this.onClick = onClick
     }
 
-    private var pdfList = listOf<Int>(1,2,3,4,5,6,7)
+    private var pdfList = listOf<Int>(0,1,2,3,4,5,6)
     set(value) {
         field = value
         notifyDataSetChanged()
@@ -41,7 +41,7 @@ class PDFListAdapter : RecyclerView.Adapter<PDFListAdapter.PDFViewHolder>() {
     }
 
     override fun onBindViewHolder(holder: PDFViewHolder, position: Int) {
-        holder.populateModel(pdfList[position],onClick)
+        holder.populateModel(pdfList[position])
     }
 
     override fun getItemCount(): Int = pdfList.size
