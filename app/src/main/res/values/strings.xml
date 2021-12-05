@@ -5,10 +5,10 @@
     <string name="nav_header_title">Android Studio</string>
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
-    <string name="action_settings">Settings</string>
+    <string name="item_bookmark">favorite</string>
 
-    <string name="menu_home">bas bolim</string>
-    <string name="menu_gallery">Folklor haqqında túsinik</string>
+    <string name="menu_home">бас бөлим</string>
+    <string name="menu_gallery">Фолклор ҳаққында түсиник</string>
     <string name="menu_saylandi">Сайландылар</string>
     <string name="folklor_haqq_nda_t_sinik">Оғада бай болған қарақалпақ фолклоры бир неше әсирлер бойы раўажланып отырған.
         Оның негизин аўыз еки халық дөретиўшилигиниң барлық жанрлары: <b>ертеклер</b>, <b>нақыл-мақаллар</b>, <b>әпсаналар</b>, <b>дәстанлар</b> ҳәм т.б. қурайды.
@@ -26,4 +26,6 @@
             Ол музыкасыз, бирақ өзгеше толқында (речитатив тәризде), ритмикалық қубылыўлар менен атқарылады. Сондай-ақ бурынлары халық
             шайырлары арасында айтыслар өткерилгени де мәлим.</br></p>
     </string>
+    <string name="send_to">send_to</string>
+    <string name="splash_title">Қарақалпақ фолклоры</string>
 </resources>

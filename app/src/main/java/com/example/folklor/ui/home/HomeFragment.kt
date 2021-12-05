@@ -21,13 +21,13 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        recyclerView.addItemDecoration(MarginItemDecoration(16,128))
+        recyclerView.addItemDecoration(MarginItemDecoration(8,128))
         recyclerView.adapter = adapter
         adapter.setOnClickItemListener {
             val intent = Intent(requireContext(),PDFReaderView::class.java)
             intent.putExtra(PDFReaderView.ID,it)
             startActivity(intent)
-            Toast.makeText(requireContext(),"item clicked",Toast.LENGTH_LONG).show()
+            Toast.makeText(requireContext(),"item clicked $it",Toast.LENGTH_LONG).show()
         }
     }
 
