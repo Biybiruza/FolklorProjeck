@@ -38,17 +38,17 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="8dp"
+        android:textAlignment="viewStart"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/card"
-        >
+        app:layout_constraintTop_toBottomOf="@id/card">
 
         <TextView
             android:id="@+id/text_gallery"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/folklor_haqq_nda_t_sinik"
-            android:textAlignment="textStart"
+            android:textAlignment="inherit"
             android:textColor="@color/black"
             android:textSize="16dp"
             android:textStyle="normal" />
