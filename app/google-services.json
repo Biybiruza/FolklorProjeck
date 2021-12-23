@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "99335363358",
+    "project_id": "folklor-a504e",
+    "storage_bucket": "folklor-a504e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:99335363358:android:37ee0cf11da510c148870f",
+        "android_client_info": {
+          "package_name": "com.example.folklor"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "99335363358-b45b2r9rcsl8pc13vqrs3ga4dbecnpku.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBOF998c65lDDzwhE5KLEUAAizEWZpc5YU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "99335363358-b45b2r9rcsl8pc13vqrs3ga4dbecnpku.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

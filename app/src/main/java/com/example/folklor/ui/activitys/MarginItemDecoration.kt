@@ -1,4 +1,4 @@
-package com.example.folklor.ui
+package com.example.folklor.ui.activitys
 
 import android.graphics.Rect
 import android.view.View
