@@ -1,8 +1,6 @@
 package com.example.folklor.ui.activitys
 
-import android.content.ContentValues
 import android.os.Bundle
-import android.util.Log
 import com.google.android.material.navigation.NavigationView
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
@@ -12,16 +10,7 @@ import androidx.navigation.ui.setupWithNavController
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.folklor.R
-import com.example.folklor.data.Users
-import com.example.folklor.ui.slideshow.SlideshowFragment
-import com.example.folklor.ui.slideshow.UserListAdapter
-import com.google.firebase.database.DataSnapshot
-import com.google.firebase.database.DatabaseError
-import com.google.firebase.database.DatabaseReference
-import com.google.firebase.database.ValueEventListener
-import kotlinx.android.synthetic.main.fragment_slideshow.*
 
 class MainActivity : AppCompatActivity() {
 
