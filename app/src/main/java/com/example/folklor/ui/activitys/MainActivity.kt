@@ -50,24 +50,4 @@ class MainActivity : AppCompatActivity() {
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
     }
 
-    fun UserLisFunction(mDatabase: DatabaseReference, madapter: UserListAdapter){
-
-        // Read from the database
-        mDatabase.addValueEventListener(object : ValueEventListener {
-            override fun onDataChange(dataSnapshot: DataSnapshot) {
-                for (userSnapshot in dataSnapshot.children){
-                    val value = userSnapshot.getValue(Users::class.java)
-                    madapter.list.add(value!!)
-                }
-                recyclerViewFirebase.adapter = madapter
-                Log.d(ContentValues.TAG, "Value is: ")
-            }
-
-            override fun onCancelled(error: DatabaseError) {
-                // Failed to read value
-                Log.w(ContentValues.TAG, "Failed to read value.", error.toException())
-            }
-        })
-    }
-
 }

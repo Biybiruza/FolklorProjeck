@@ -14,7 +14,7 @@ class UserListAdapter: RecyclerView.Adapter<UserListAdapter.UserListViewHolder>(
 
     inner class UserListViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         fun populateModel(model: Users) {
-            Picasso.get().load(model.imageUrl).centerCrop().into(itemView.ImageViewBook)
+            Picasso.get().load(model.imageUrl).resize(700,1150).into(itemView.ImageViewBook)
             Log.d(model.imageUrl,"magliwmat")
         }
     }
