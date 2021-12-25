@@ -1,5 +1,6 @@
 package com.example.folklor.ui.slideshow
 
+import android.net.Uri
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -16,7 +17,16 @@ class UserListAdapter: RecyclerView.Adapter<UserListAdapter.UserListViewHolder>(
         fun populateModel(model: Users) {
             Picasso.get().load(model.imageUrl).resize(700,1150).into(itemView.ImageViewBook)
             Log.d(model.imageUrl,"magliwmat")
+            itemView.setOnClickListener {
+                onClick.invoke(model.pdfFileUrl!!, model.name!!)
+            }
         }
+    }
+
+    private var onClick:(it:String, name:String)->Unit = { s: String, s1: String -> }
+
+    fun setOnClickItemListener(onClick:(it:String,name:String)->Unit){
+        this.onClick = onClick
     }
 
         var list = arrayListOf<Users>()

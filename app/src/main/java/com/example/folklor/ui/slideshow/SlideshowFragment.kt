@@ -1,9 +1,11 @@
 package com.example.folklor.ui.slideshow
 
 import android.content.ContentValues
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.folklor.R
@@ -24,6 +26,16 @@ class SlideshowFragment : Fragment(R.layout.fragment_slideshow) {
         recyclerViewFirebase.layoutManager = LinearLayoutManager(requireContext());
         recyclerViewFirebase.addItemDecoration(MarginItemDecoration(6,16))
         UserListFunction(mDatabase,madapter)
+
+        madapter.setOnClickItemListener { pdfUrl: String, name: String ->
+            val intent = Intent(requireContext(), UserReadActivity::class.java)
+            intent.putExtra(UserReadActivity.URLID,pdfUrl)
+            intent.putExtra(UserReadActivity.ID,name)
+            startActivity(intent)
+//            Toast.makeText(requireContext(),"item clicked $pdfUrl", Toast.LENGTH_LONG).show()
+
+        }
+
     }
     private fun UserListFunction(mDatabase: DatabaseReference, madapter: UserListAdapter){
         var userList = arrayListOf<Users>()

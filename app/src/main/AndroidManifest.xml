@@ -10,9 +10,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Folklor">
-<!--        <uses-permission android:name="android.permission.INTERNET"-->
-<!--            tools:ignore="WrongManifestParent" />-->
 
+        <activity android:name=".ui.slideshow.UserReadActivity" />
         <activity android:name=".ui.activitys.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -20,14 +19,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity android:name=".ui.home.PDFReaderView" />
-
+        <activity android:name=".ui.home.PDFReaderViewActivity" />
         <activity
             android:name=".ui.activitys.MainActivity"
             android:label="@string/app_name"
-            android:theme="@style/Theme.Folklor.NoActionBar">
-        </activity>
+            android:theme="@style/Theme.Folklor.NoActionBar" />
     </application>
 
 </manifest>

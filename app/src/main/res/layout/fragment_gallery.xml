@@ -36,22 +36,24 @@
     <ScrollView
         android:id="@+id/scrollView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:padding="8dp"
         android:textAlignment="viewStart"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/card">
+        app:layout_constraintTop_toBottomOf="@id/card"
+        android:layout_marginBottom="32dp">
 
         <TextView
             android:id="@+id/text_gallery"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
             android:text="@string/folklor_haqq_nda_t_sinik"
             android:textAlignment="inherit"
             android:textColor="@color/black"
             android:textSize="16dp"
-            android:textStyle="normal" />
+            android:textStyle="normal"
+            android:layout_marginBottom="16dp"/>
 
     </ScrollView>
 
