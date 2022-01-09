@@ -1,16 +1,22 @@
 package com.example.folklor.ui.slideshow
 
-import android.net.Uri
+import android.os.AsyncTask
 import android.os.Build
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.MenuItem
 import android.widget.Toast
 import androidx.annotation.RequiresApi
+import androidx.appcompat.app.AppCompatActivity
 import com.example.folklor.R
+import com.github.barteksc.pdfviewer.PDFView
 import com.github.barteksc.pdfviewer.scroll.DefaultScrollHandle
 import kotlinx.android.synthetic.main.activity_user_read.*
+import java.io.BufferedInputStream
+import java.io.IOException
+import java.io.InputStream
+import java.net.HttpURLConnection
+import java.net.URL
 
 class UserReadActivity : AppCompatActivity() {
 
@@ -34,19 +40,44 @@ class UserReadActivity : AppCompatActivity() {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.title = name
 
-        Log.d(s,"bibi")
-        val uri = Uri.parse(s)
-        Toast.makeText(this,"item clicked $s", Toast.LENGTH_LONG).show()
+        /*Log.d(s, "bibi")
+//        val uri = Uri.parse(s)
+        Toast.makeText(this, "item clicked $s", Toast.LENGTH_LONG).show()*/
 
-        pdfViewUser.fromUri(uri!!)
-            .enableSwipe(true)
-            .swipeHorizontal(false)
-            .defaultPage(0)
-            .enableAnnotationRendering(true)
-            .scrollHandle(DefaultScrollHandle(this))
-            .spacing(2)
-            .load()
+        RetrivePdfStream().execute(s)
+    }
 
+    inner class RetrivePdfStream : AsyncTask<String?, Void?, InputStream?>() {
+
+        // Here load the pdf and dismiss the dialog box
+        override fun onPostExecute(inputStream: InputStream?) {
+            pdfViewUser.fromStream(inputStream)
+                    .enableSwipe(true)
+                    .swipeHorizontal(false)
+                    .defaultPage(0)
+                    .enableAnnotationRendering(true)
+                    .scrollHandle(DefaultScrollHandle(this@UserReadActivity))
+                    .spacing(2)
+                    .load()
+        }
+
+        override fun doInBackground(vararg p0: String?): InputStream? {
+            var inputStream: InputStream? = null
+            try {
+                // adding url
+                val url = URL(p0[0])
+                val urlConnection: HttpURLConnection = url.openConnection() as HttpURLConnection
+
+                // if url connection response code is 200 means ok the execute
+                if (urlConnection.responseCode == 200) {
+                    inputStream = BufferedInputStream(urlConnection.inputStream)
+                }
+            } // if error return null
+            catch (e: IOException) {
+                return null
+            }
+            return inputStream
+        }
     }
 
     //back button clicked
