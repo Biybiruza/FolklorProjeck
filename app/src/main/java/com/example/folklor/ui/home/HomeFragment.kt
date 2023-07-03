@@ -6,7 +6,7 @@ import android.view.View
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.example.folklor.R
-import com.example.folklor.ui.MarginItemDecoration
+import com.example.folklor.ui.activitys.MarginItemDecoration
 import kotlinx.android.synthetic.main.fragment_home.*
 
 class HomeFragment : Fragment(R.layout.fragment_home) {
@@ -18,8 +18,8 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         recyclerView.addItemDecoration(MarginItemDecoration(6,16))
         recyclerView.adapter = adapter
         adapter.setOnClickItemListener {
-            val intent = Intent(requireContext(),PDFReaderView::class.java)
-            intent.putExtra(PDFReaderView.ID,it)
+            val intent = Intent(requireContext(),PDFReaderViewActivity::class.java)
+            intent.putExtra(PDFReaderViewActivity.ID,it)
             startActivity(intent)
             Toast.makeText(requireContext(),"item clicked $it",Toast.LENGTH_LONG).show()
         }

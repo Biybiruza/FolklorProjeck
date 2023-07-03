@@ -1,12 +1,10 @@
-package com.example.folklor.ui
+package com.example.folklor.ui.activitys
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
-import android.view.View
 import android.view.WindowManager
-import com.example.folklor.MainActivity
 import com.example.folklor.R
 
 class SplashActivity : AppCompatActivity() {

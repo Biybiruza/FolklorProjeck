@@ -19,7 +19,7 @@ import kotlinx.android.synthetic.main.activity_p_d_f_reader_view.*
 import java.io.File
 
 
-class PDFReaderView : AppCompatActivity() {
+class PDFReaderViewActivity : AppCompatActivity() {
 
     companion object{
         const val ID = "id"
@@ -27,6 +27,7 @@ class PDFReaderView : AppCompatActivity() {
 
     private lateinit var pdfList: List<String>
     var n = 0
+    private lateinit var pdfListTitle: List<String>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,18 +37,20 @@ class PDFReaderView : AppCompatActivity() {
                 "Qaraqalpaq folklori. Naqil-maqallar.pdf", "Qaraqalpaq folklori. Jumbaqlar.pdf", "Qaraqalpaq folklori. Qoblan.pdf",
                 "Qaraqalpaq folklori. Qiriq qiz.pdf", "Qaraqalpaq folklori. Shariyar. Qanshayim (1997).pdf")
 
+        pdfListTitle = listOf("Алпамыс","Ер Зийўар. Қурбанбек","Нақил-мақаллар", "Жумбақлар", "Қоблан",
+                "Қириқ қиз", "Шарияр. Қаншайим (1997)")
+
         //share for
         val builder = StrictMode.VmPolicy.Builder()
         StrictMode.setVmPolicy(builder.build())
         builder.detectFileUriExposure()
 
-
+        n = intent.getIntExtra(ID, 0)
 
         //back button
         supportActionBar?.setHomeButtonEnabled(true)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
-
-        n = intent.getIntExtra(ID, 0)
+        supportActionBar?.title = pdfListTitle[n]
 
         //pdf reader
         pdfView.fromAsset(pdfList[n])
