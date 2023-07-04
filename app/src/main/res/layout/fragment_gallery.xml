@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="?attr/colorSecondaryVariant"
     tools:context=".ui.gallery.GalleryFragment">
 
     <androidx.cardview.widget.CardView
@@ -43,7 +44,9 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/card"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginBottom="32dp">
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp">
 
         <TextView
             android:id="@+id/text_gallery"
@@ -51,10 +54,10 @@
             android:layout_height="0dp"
             android:text="@string/folklor_haqq_nda_t_sinik"
             android:textAlignment="inherit"
-            android:textColor="@color/black"
+            android:textColor="?attr/colorSecondary"
             android:textSize="16dp"
             android:textStyle="normal"
-            android:layout_marginBottom="16dp"/>
+            android:layout_marginBottom="4dp"/>
 
     </ScrollView>
 
